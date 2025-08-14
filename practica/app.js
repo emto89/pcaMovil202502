@@ -1,20 +1,25 @@
 "use strict";
 (function () {
-    var PI = 3.14159;
-    var PI2 = PI * PI;
-    var mensaje = "Hola, mundo";
-    var numero = 42;
-    var booleana = true;
-    var hoy = new Date();
-    var cualquiercosa;
-    cualquiercosa = mensaje;
-    cualquiercosa = numero;
-    cualquiercosa = booleana;
-    cualquiercosa = hoy;
-    if (1 == 1) {
-        var mensaje_1 = "Hola, mundo desde el if";
-        var PI2 = 3.14;
-    }
-    console.log(mensaje);
-    console.log(PI2);
+    var miFuncion = function (a) {
+        return a.toUpperCase();
+    };
+    var miFuncionF = function (a) { return a.toUpperCase(); };
+    var sumarN = function (a, b) {
+        return a + b;
+    };
+    var sumarNF = function (a, b) { return a + b; };
+    console.log(miFuncion("hola"));
+    console.log(miFuncionF("hola"));
+    console.log(sumarN(5, 10));
+    console.log(sumarNF(5, 10));
+    var hulk = {
+        nombre: "Hulk",
+        smash: function () {
+            var _this = this;
+            setTimeout(function () {
+                console.log(_this.nombre + " smash!");
+            }, 1000);
+        }
+    };
+    hulk.smash();
 })();
