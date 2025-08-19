@@ -1,30 +1,20 @@
 (function(){
-    let anho = Date.now();
-    console.log("La clase de desarrollo móvil" + anho + " es genial");
-   
-    function getEdad(){
-        return 20;
-    }
-    function getAnho(){
-        return  new Date().getFullYear().toString();
-    }
-    const nombre = "Medardo";
-    const apellido = "Medina";
-    const edad = 20;
 
-    const nombreCompleto = nombre + " "+ apellido;
-    const nombreCompletoEdad = nombreCompleto + " tiene " + edad + " años";
+   function getEdad(){
+     return 25;
+   }
 
-    const nombreCompletoTL = `${nombre} ${apellido}`;
-    const nombreCompletoEdadTL = `${nombreCompletoTL} tiene ${edad} años`;
+    const nombre: string = "Medardo";
+    const apellido: string = "Mendoza";
+    const edad: number = 25;
 
-    const salida = `Hola, mi nombre es ${nombreCompletoTL} y tengo ${getEdad()} años.`;
+    const nombreCompleto = "El señor: " + nombre + " " + apellido + ", Edad: " + edad;
+
+    const nombreCompletoTL = `El señor: ${nombre} ${apellido}, Edad: ${edad}`;
 
     console.log(nombreCompleto);
-    console.log(nombreCompletoEdad);
     console.log(nombreCompletoTL);
-    console.log(nombreCompletoEdadTL);
-    console.log(salida);
-    
+
+    const salida = `Hola, mi nombre es ${nombre} ${apellido}, tengo ${edad} años y mi edad es: ${getEdad()}`;
 
 })();
