@@ -1,26 +1,39 @@
-(function(){
- 
-   const miFuncion = function(a: string) {
-    return a.toUpperCase();
-   }
+(()=>{
+   /*class Avenger{
+      nombre: string;
+      equipo: string;
+      nombreReal: string;
+      puedePelear: boolean;
+      peleasGanadas: number;
 
-   const miFuncionF = (a: string) => a.toUpperCase();
+      constructor( nombreCompleto: string,
+         equipo: string, nombreReal: string, puedePelear: boolean, peleasGanadas: number){
+            this.nombre = nombreCompleto;
+            this.equipo= equipo;
+            this.nombreReal = nombreReal;
+            this.peleasGanadas = peleasGanadas;
+            this.puedePelear = puedePelear;
+         }
+   }*/
 
-   console.log(miFuncion("hola"));
-   console.log(miFuncionF("hola"));
- 
-   const miFuncionF2 = (a: number, b: number) => a + b;
-   console.log(miFuncionF2(5, 10));
-   let a = 19;
-   const hulk = {
-     nombre: "Hulk",
-     smash(){
-        setTimeout(() => {
-            console.log(`${this.nombre} smash!!!`);
-        }, 3000);
-     },
-     edad: 30,
-   }
+ class Avenger{
 
-   hulk.smash();
+     constructor (
+        public nombre: string,
+        public equipo: string,
+        public nombreReal?: string,
+        public puedePelear: boolean = true,
+        public peleasGanadas: number = 0
+     ){}
+ }
+
+  const antman = new Avenger('Antman','capitán america');
+  const spiderman = new Avenger('Spiderman','Tony', 'Peter', false, 10);
+
+  console.log( antman );
+  console.log( spiderman );
+
+
+
+
 })();
