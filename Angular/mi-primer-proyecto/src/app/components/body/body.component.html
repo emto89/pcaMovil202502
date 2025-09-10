@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col">
+    <h1>*ngIf</h1>
+    <hr>
+    <div *ngIf="mostrar" class="card" style="width: 100;">
+      <h5 class="card-title"> {{ frase.mensaje }}</h5>
+      <p class="card-text"> {{ frase.autor }} </p>
+    </div>
+    <div style="display: none;" >
+      <h3>Elemento Oculto con CSS</h3>
+    </div>
+    <button (click)="mostrar = !mostrar" type="button" class="btn btn-primary btn-block">
+      Mostrar/Ocultar
+    </button>
+  </div>
+  <div class="col">
+    <h1>*ngFor</h1>
+    <hr>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let foo of personajes; let i = index"> {{ i+1 }} - {{ foo }}</li>
+    </ul>
+  </div>
+
+  <div class="col">
+    <ng-template #miTemplate>
+      <h1>ng-template</h1>
+      <hr>
+      <p> Esto es una plantilla que se llama desde otro lado </p>
+    </ng-template>
+
+    <div *ngTemplateOutlet="miTemplate"></div>
+  </div>
+
+  <div class="col">
+    <h1>ngContainer</h1>
+    <hr>
+    <ng-container *ngIf="mostrar">
+      <div class="card" style="width: 100;">
+        <h5 class="card-title"> {{ frase.mensaje }}</h5>
+        <p class="card-text"> {{ frase.autor }} </p>
+    </div>
+    </ng-container>
+  </div>
+
+</div>
