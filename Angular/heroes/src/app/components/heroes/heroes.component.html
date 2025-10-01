@@ -1,7 +1,7 @@
 <section class="row animated fast">
   <article class="row">
       @for (heroe of heroes; track $index) {
-        <app-heroe-tarjeta [heroe]="heroe" [index]="$index" class="col-3"></app-heroe-tarjeta>
+        <app-heroe-tarjeta [heroe]="heroe" [index]="heroe.idx ?? 0 " class="col-3"></app-heroe-tarjeta>
       }
   </article>
 </section>

@@ -62,4 +62,25 @@ export class HeroesService {
   getHeroes(): Heroe[] {
     return this.heroes;
   }
+  getHeroe( idx: number ): Heroe{
+    return this.heroes[idx];
+  }
+  buscarHeroes( termino: string ): Heroe[] {
+    let heroeArr: Heroe[] = [];
+    termino = termino.toLowerCase();
+    for( let i = 0; i < this.heroes.length; i++ ){
+
+      let heroe = this.heroes[i];
+      let nombre = heroe.nombre.toLowerCase();
+
+      // "batman" contiene a "b"
+      if( nombre.indexOf( termino ) >= 0 ){
+        heroe.idx = i;
+        heroeArr.push( heroe );
+      }
+
+    }
+
+    return heroeArr;
+  }
 }

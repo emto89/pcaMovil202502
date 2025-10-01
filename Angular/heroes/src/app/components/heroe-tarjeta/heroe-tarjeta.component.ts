@@ -13,7 +13,9 @@ export class HeroeTarjetaComponent {
   @Input() index: number = 0;
 
   constructor( private _router: Router){}
-
+  ngOnInit(): void {
+    console.log(this.heroe);
+  }
   verHeroe(){
    this._router.navigate(['/heroe', this.index]);
   }

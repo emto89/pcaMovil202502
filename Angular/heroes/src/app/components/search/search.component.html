@@ -1,3 +1,12 @@
-<h1>Buscando: <small> termino </small></h1>
+<h1>Buscando: <small> {{ termino }} </small></h1>
 <hr>
-<section class="row animated fadeIn fast"></section>
+<section class="row animated fadeIn fast" *ngIf="heroes.length == 0">
+ <article class="col">
+   <h2>NO EXISTEN RESULTADO PARA EL TERMINO: {{ termino }}</h2>
+ </article>
+</section>
+<section class="card-columns">
+  @for (heroe of heroes; track $index) {
+        <app-heroe-tarjeta [heroe]="heroe" [index]="heroe.idx ?? 0" class="col-3"></app-heroe-tarjeta>
+      }
+</section>
