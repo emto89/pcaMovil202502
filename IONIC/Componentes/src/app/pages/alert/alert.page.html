@@ -1,0 +1,23 @@
+<app-header title="Alert"></app-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-button id="present-alert" expand="block">Alert</ion-button>
+  <ion-alert
+    trigger="present-alert"
+    header="Este es una alerta del sistema!"
+    [buttons]="alertButtons"
+    (didDismiss)="setResult($event)"
+
+  ></ion-alert>
+
+  <ion-button id="present-alert-form" expand="block">Registrarme</ion-button>
+  <ion-alert
+    trigger="present-alert-form"
+    header="Por favor realice su registro"
+    [buttons]="alertButtons1"
+    [inputs]="alertInputs1"
+  ></ion-alert>
+
+
+</ion-content>
