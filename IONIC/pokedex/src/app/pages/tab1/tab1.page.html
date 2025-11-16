@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <ion-icon name="tv"></ion-icon>
+      Pokemon
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-grid>
+    <ion-row>
+       <ion-searchbar class="ion-no-padding ion-padding-top"
+       color="light"
+       placeholder="Cantidad de pokemon"
+       fill="solid"
+       type="number"
+       [(ngModel)]="cantidad"
+       >
+       </ion-searchbar>
+       <ion-button
+       color="dark"
+       size="small"
+       expand="full"
+       shape="round"
+       >Mostrar</ion-button>
+    </ion-row>
+     @for (pokemon of pokemonArray; track $index) {
+      <ion-card color="warning">
+    <ion-card-content>
+       <ion-row>
+           <ion-col size="5" class="contPokemon">
+                <ion-img [src]="pokemon.sprites.other.dream_world.front_default" class="pokemon"></ion-img>
+           </ion-col>
+           <ion-col size="7" class="contData">
+               <ion-card-subtitle class="numero">
+                ID: # {{ pokemon.id }}
+               </ion-card-subtitle>
+               <ion-card-title>
+                  {{ pokemonArray[0].name }}
+               </ion-card-title>
+               <ion-badge>
+                   {{ pokemon.types[0].type.name }}
+               </ion-badge>
+           </ion-col>
+       </ion-row>
+    </ion-card-content>
+  </ion-card>
+     }
+  </ion-grid>
+
+</ion-content>
